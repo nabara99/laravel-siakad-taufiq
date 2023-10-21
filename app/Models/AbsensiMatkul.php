@@ -5,11 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Subject extends Model
+class AbsensiMatkul extends Model
 {
     use HasFactory;
 
-    public function lecturer()
+    public function schedule()
+    {
+        return $this->belongsTo(Schedule::class);
+    }
+
+    public function student()
     {
         return $this->belongsTo(User::class);
     }
